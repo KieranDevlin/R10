@@ -7,8 +7,9 @@ import MapContainer from '../screens/Map';
 import ScheduleContainer from '../screens/Schedule';
 import SessionContainer from '../screens/Session';
 import {sharedScreenOptions} from './config';
-import Ionicon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+// create individual stacks for each screen
 const ScheduleStack = createStackNavigator();
 const MapStack = createStackNavigator();
 const FavesStack = createStackNavigator();
@@ -39,6 +40,7 @@ const AboutStackScreens = props => (
 
 const BottomTabNav = createBottomTabNavigator();
 
+// add icons for each route
 const BottomTabNavScrens = props => (
   <BottomTabNav.Navigator
     screenOptions={({route}) => ({
@@ -46,10 +48,16 @@ const BottomTabNavScrens = props => (
         let iconName;
 
         if (route.name === 'Schedule') {
-          iconName = focused ? 'calendar-today' : 'calendar-today-outlined';
+          iconName = focused ? 'calendar' : 'calendar-blank-outline';
+        } else if (route.name === 'Map') {
+          iconName = focused ? 'map' : 'map-outline';
+        } else if (route.name === 'Faves') {
+          iconName = focused ? 'heart' : 'heart-outline';
+        } else if (route.name === 'About') {
+          iconName = focused ? 'information' : 'information-outline';
         }
 
-        return <Ionicon name={iconName} size={size} color={color} />;
+        return <Icon name={iconName} size={size} color={color} />;
       },
     })}
     tabBarOptions={{

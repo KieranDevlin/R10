@@ -13,6 +13,12 @@ const Schedule = ({navigation}) => {
         }}>
         <Text>Go to session</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Speaker');
+        }}>
+        <Text>Go to Speaker</Text>
+      </TouchableOpacity>
     </View>
   );
 };
