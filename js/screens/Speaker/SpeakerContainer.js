@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import Faves from './Faves';
+import Speaker from './Speaker';
 import {SafeAreaView, ActivityIndicator} from 'react-native';
-
-class FavesContainer extends Component {
+class SpeakerContainer extends Component {
   constructor(props) {
     super(props),
       (this.state = {
@@ -26,9 +25,9 @@ class FavesContainer extends Component {
         </SafeAreaView>
       );
     } else {
-      return <Faves navigation={this.props.navigation} />;
+      return <Speaker />;
     }
   }
 }
 
-export default FavesContainer;
+export default SpeakerContainer;
