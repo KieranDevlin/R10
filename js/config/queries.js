@@ -10,6 +10,8 @@ export const ALL_SESSIONS = gql`
         id
         image
         name
+        bio
+        url
       }
       startTime
       title
@@ -41,6 +43,18 @@ export const SINGLE_SESSION = gql`
       }
       startTime
       title
+    }
+  }
+`;
+
+export const SINGLE_SPEAKER = gql`
+  query Speaker($id: ID!) {
+    Speaker(id: $id) {
+      id
+      name
+      image
+      bio
+      url
     }
   }
 `;

@@ -6,7 +6,7 @@ const ScheduleListItem = ({item, navigation}) => {
   return (
     <TouchableHighlight
       onPress={() => {
-        navigation.navigate('Session', {item});
+        navigation.navigate('Session', {item, navigation});
       }}>
       <View style={styles.sessionInfo}>
         <Text style={styles.sessionTitle}>{item.location}</Text>

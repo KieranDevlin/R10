@@ -2,6 +2,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Header} from '@react-navigation/stack';
 import LinearGradient from 'react-native-linear-gradient';
+import {ScreenStackHeaderBackButtonImage} from 'react-native-screens';
 
 const GradientHeader = props => (
   <View style={{backgroundColor: 'white', overflow: 'hidden'}}>
@@ -16,9 +17,13 @@ const GradientHeader = props => (
 );
 
 export const sharedScreenOptions = navigation => ({
-  headerBackTitle: null,
   header: props => <GradientHeader {...props} />,
   headerStyle: {
     backgroundColor: 'transparent',
+  },
+  headerBackTitleVisible: false,
+  headerTitleStyle: {
+    color: '#ffffff',
+    fontFamily: 'Montserrat',
   },
 });

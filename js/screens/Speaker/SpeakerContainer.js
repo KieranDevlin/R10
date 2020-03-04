@@ -1,33 +1,30 @@
 import React, {Component} from 'react';
 import Speaker from './Speaker';
-import {SafeAreaView, ActivityIndicator} from 'react-native';
-class SpeakerContainer extends Component {
-  constructor(props) {
-    super(props),
-      (this.state = {
-        isLoading: false,
-      });
+import {SafeAreaView, ActivityIndicator, View, Text} from 'react-native';
+import {useQuery} from '@apollo/react-hooks';
+import {SINGLE_SPEAKER} from '../../config/queries';
+import styles from './styles';
+
+const SpeakerContainer = ({route, navigation}) => {
+  const {loading, error, data} = useQuery(SINGLE_SPEAKER, {
+    variables: {id: route.params.id},
+  });
+
+  if (loading)
+    return (
+      <View style={styles.fullScreen}>
+        <ActivityIndicator />
+      </View>
+    );
+  if (error)
+    return (
+      <View style={styles.fullScreen}>
+        <Text>Error </Text>
+      </View>
+    );
+  if (data) {
+    return <Speaker speaker={data.Speaker} navigation={navigation} />;
   }
-
-  componentDidMount = () => {
-    this.setState({isLoading: true});
-
-    setTimeout(() => {
-      this.setState({isLoading: false});
-    }, 2000);
-  };
-
-  render() {
-    if (this.state.isLoading) {
-      return (
-        <SafeAreaView>
-          <ActivityIndicator animating={true} size="small" color="black" />
-        </SafeAreaView>
-      );
-    } else {
-      return <Speaker />;
-    }
-  }
-}
+};
 
 export default SpeakerContainer;

@@ -18,7 +18,13 @@ const AboutStack = createStackNavigator();
 const ScheduleStackScreens = props => (
   <ScheduleStack.Navigator screenOptions={sharedScreenOptions}>
     <ScheduleStack.Screen name="Schedule" component={ScheduleContainer} />
-    <ScheduleStack.Screen name="Session" component={SessionContainer} />
+    <ScheduleStack.Screen
+      name="Session"
+      component={SessionContainer}
+      options={{
+        headerTintColor: 'white',
+      }}
+    />
   </ScheduleStack.Navigator>
 );
 const MapStackScreens = props => (
@@ -29,7 +35,13 @@ const MapStackScreens = props => (
 const FavesStackScreens = props => (
   <FavesStack.Navigator screenOptions={sharedScreenOptions}>
     <FavesStack.Screen name="Faves" component={FavesContainer} />
-    <FavesStack.Screen name="Session" component={SessionContainer} />
+    <FavesStack.Screen
+      name="Session"
+      component={SessionContainer}
+      options={{
+        headerTintColor: 'white',
+      }}
+    />
   </FavesStack.Navigator>
 );
 const AboutStackScreens = props => (

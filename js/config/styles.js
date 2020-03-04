@@ -1,10 +1,6 @@
 import {StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
-  pageTitle: {
-    backgroundColor: 'linear-gradient(#cf392, #9963ea)',
-  },
-});
+const styles = StyleSheet.create({});
 
 // Medium Grey: #999999
 // Light Grey: #e6e6e6
