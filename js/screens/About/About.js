@@ -8,8 +8,14 @@ import {
   SectionList,
 } from 'react-native';
 import styles from './styles';
-
+import {useQuery} from '@apollo/react-hooks';
+import {CODE_OF_CONDUCT} from '../../config/queries';
 const About = () => {
+  const {loading, error, data} = useQuery(CODE_OF_CONDUCT);
+
+  if (loading) return <Text>Loading...</Text>;
+  if (error) return <Text>Error </Text>;
+
   return (
     <>
       <View style={styles.title}>
@@ -32,6 +38,7 @@ const About = () => {
           Vancovuer, BC.
         </Text>
         <Text>Code of Conduct</Text>
+
         <Text>&copy; RED Academy 2017</Text>
       </View>
     </>
