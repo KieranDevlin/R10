@@ -39,27 +39,51 @@ const Session = ({
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity
-          onPress={() => {
-            addFaveSession(item.id);
-          }}>
-          <View style={styles.button}>
-            <LinearGradient
-              colors={['#9963ea', '#8797D6']}
-              start={{x: 0.0, y: 1.0}}
-              end={{x: 1.0, y: 0.0}}
-              style={[
-                StyleSheet.absoluteFill,
-                {
-                  height: '100%',
-                  width: '100%',
-                  borderRadius: 50,
-                },
-              ]}
-            />
-            <Text style={styles.buttonText}>Add to Faves</Text>
-          </View>
-        </TouchableOpacity>
+        {!faveIds.includes(item.id) ? (
+          <TouchableOpacity
+            onPress={() => {
+              addFaveSession(item.id);
+            }}>
+            <View style={styles.button}>
+              <LinearGradient
+                colors={['#9963ea', '#8797D6']}
+                start={{x: 0.0, y: 1.0}}
+                end={{x: 1.0, y: 0.0}}
+                style={[
+                  StyleSheet.absoluteFill,
+                  {
+                    height: '100%',
+                    width: '100%',
+                    borderRadius: 50,
+                  },
+                ]}
+              />
+              <Text style={styles.buttonText}>Add to Faves</Text>
+            </View>
+          </TouchableOpacity>
+        ) : (
+          <TouchableOpacity
+            onPress={() => {
+              removeFaveSession(item.id);
+            }}>
+            <View style={styles.button}>
+              <LinearGradient
+                colors={['#9963ea', '#8797D6']}
+                start={{x: 0.0, y: 1.0}}
+                end={{x: 1.0, y: 0.0}}
+                style={[
+                  StyleSheet.absoluteFill,
+                  {
+                    height: '100%',
+                    width: '100%',
+                    borderRadius: 50,
+                  },
+                ]}
+              />
+              <Text style={styles.buttonText}>Remove from Faves</Text>
+            </View>
+          </TouchableOpacity>
+        )}
       </View>
     </View>
   );

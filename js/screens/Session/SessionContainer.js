@@ -12,7 +12,7 @@ class SessionContainer extends Component {
             navigation={this.props.navigation}
             addFaveSession={value.addFaveSession}
             removeFaveSession={value.removeFaveSession}
-            FaveIds={value.FaveIds}
+            faveIds={value.faveIds}
           />
         )}
       </FavesContext.Consumer>
