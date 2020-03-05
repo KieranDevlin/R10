@@ -1,8 +1,8 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Platform} from 'react-native';
 import {Header} from '@react-navigation/stack';
 import LinearGradient from 'react-native-linear-gradient';
-import {ScreenStackHeaderBackButtonImage} from 'react-native-screens';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const GradientHeader = props => (
   <View style={{backgroundColor: 'white', overflow: 'hidden'}}>
@@ -16,7 +16,19 @@ const GradientHeader = props => (
   </View>
 );
 
-export const sharedScreenOptions = navigation => ({
+const MenuButton = props => {
+  return (
+    <Icon
+      name="menu"
+      color="white"
+      size={25}
+      style={{marginLeft: 20}}
+      onPress={() => props.navigation.toggleDrawer()}
+    />
+  );
+};
+
+export const sharedScreenOptions = props => ({
   header: props => <GradientHeader {...props} />,
   headerStyle: {
     backgroundColor: 'transparent',
@@ -26,4 +38,9 @@ export const sharedScreenOptions = navigation => ({
     color: '#ffffff',
     fontFamily: 'Montserrat',
   },
+  ...Platform.select({
+    android: {
+      headerLeft: () => <MenuButton navigation={props.navigation} />,
+    },
+  }),
 });
