@@ -8,40 +8,31 @@ import {
   SectionList,
 } from 'react-native';
 import styles from './styles';
-import {useQuery} from '@apollo/react-hooks';
-import {CODE_OF_CONDUCT} from '../../config/queries';
-const About = () => {
-  const {loading, error, data} = useQuery(CODE_OF_CONDUCT);
 
-  if (loading) return <Text>Loading...</Text>;
-  if (error) return <Text>Error </Text>;
-
+const About = ({data}) => {
+  console.log(data);
   return (
-    <>
-      <View style={styles.title}>
-        <Text>About</Text>
-      </View>
+    <View style={styles.root}>
       <View style={styles.header}>
-        <Image
-          //   style={{width: 50, height: 50}}
-          source={require('../../assets/images/r10_logo.png')}
-        />
+        <Image source={require('../../assets/images/r10_logo.png')} />
       </View>
       <View style={styles.content}>
-        <Text>
+        <Text style={styles.text}>
           R10 is a conference that focuses on just about any topic related to
           dev.
         </Text>
-        <Text>Date &amp; Venue</Text>
-        <Text>
+        <Text style={styles.title}>Date &amp; Venue</Text>
+        <Text style={styles.text}>
           The R10 conference will take place on Saturday, December 8, 2018 in
           Vancovuer, BC.
         </Text>
-        <Text>Code of Conduct</Text>
-
-        <Text>&copy; RED Academy 2017</Text>
+        <Text style={styles.title}>Code of Conduct</Text>
+        {data?.allConducts.map(singleCode => {
+          // TODO :return single code of conduct component here
+        })}
       </View>
-    </>
+      <Text style={styles.text}>&copy; RED Academy 2017</Text>
+    </View>
   );
 };
 
