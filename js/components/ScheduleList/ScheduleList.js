@@ -4,14 +4,18 @@ import styles from './styles';
 import moment from 'moment';
 import ScheduleListItem from '../ScheduleListItem';
 
-const ScheduleList = ({allSessions, navigation}) => {
+const ScheduleList = ({allSessions, navigation, faveIds}) => {
   return (
     <View>
       <SectionList
         sections={allSessions}
         keyExtractor={session => session.id}
         renderItem={({item}) => (
-          <ScheduleListItem item={item} navigation={navigation} />
+          <ScheduleListItem
+            item={item}
+            navigation={navigation}
+            faveIds={faveIds}
+          />
         )}
         renderSectionHeader={({section: {title}}) => (
           <View style={styles.sessionTitleContainer}>

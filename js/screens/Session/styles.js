@@ -9,6 +9,11 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     marginBottom: 10,
   },
+  liked: {
+    height: 30,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
   location: {
     color: '#999999',
     fontWeight: '500',

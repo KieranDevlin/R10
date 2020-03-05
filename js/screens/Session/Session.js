@@ -3,6 +3,8 @@ import {Text, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 const Session = ({
   item,
   navigation,
@@ -13,7 +15,12 @@ const Session = ({
   return (
     <View style={styles.root}>
       <View style={styles.session}>
-        <Text style={styles.location}>{item.location}</Text>
+        <View style={styles.liked}>
+          <Text style={styles.location}>{item.location}</Text>
+          {faveIds.includes(item.id) && (
+            <Icon name="heart" size={30} color="red" />
+          )}
+        </View>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.time}>
           {moment(item.startTime).format('h:mm A')}
