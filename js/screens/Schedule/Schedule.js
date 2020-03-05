@@ -1,10 +1,10 @@
 import React from 'react';
-import ScheduleList from '../../components/ScheduleList';
+import SessionList from '../../components/SessionList';
 
 const Schedule = ({allSessions, navigation, faveIds}) => {
   return (
     allSessions.length !== 0 && (
-      <ScheduleList
+      <SessionList
         allSessions={allSessions}
         navigation={navigation}
         faveIds={faveIds}

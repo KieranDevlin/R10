@@ -6,6 +6,7 @@ export const ALL_SESSIONS = gql`
       id
       description
       location
+      startTime
       speaker {
         id
         image
@@ -13,7 +14,25 @@ export const ALL_SESSIONS = gql`
         bio
         url
       }
+      title
+    }
+  }
+`;
+
+export const ALL_FAVE_SESSIONS = gql`
+  query allSessions($filter: SessionWhereInput) {
+    allSessions(filter: $filter) {
+      id
+      description
+      location
       startTime
+      speaker {
+        id
+        image
+        name
+        bio
+        url
+      }
       title
     }
   }

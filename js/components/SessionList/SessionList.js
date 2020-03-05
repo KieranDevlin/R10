@@ -2,16 +2,16 @@ import React from 'react';
 import {SectionList, View, Text, TouchableHighlight} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
-import ScheduleListItem from '../ScheduleListItem';
+import SessionListItem from '../SessionListItem';
 
-const ScheduleList = ({allSessions, navigation, faveIds}) => {
+const SessionList = ({allSessions, navigation, faveIds}) => {
   return (
     <View>
       <SectionList
         sections={allSessions}
         keyExtractor={session => session.id}
         renderItem={({item}) => (
-          <ScheduleListItem
+          <SessionListItem
             item={item}
             navigation={navigation}
             faveIds={faveIds}
@@ -28,4 +28,4 @@ const ScheduleList = ({allSessions, navigation, faveIds}) => {
   );
 };
 
-export default ScheduleList;
+export default SessionList;

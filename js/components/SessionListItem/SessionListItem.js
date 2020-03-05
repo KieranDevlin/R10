@@ -3,7 +3,7 @@ import {Text, View, TouchableHighlight} from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const ScheduleListItem = ({item, navigation, faveIds}) => {
+const SessionListItem = ({item, navigation, faveIds}) => {
   return (
     <TouchableHighlight
       onPress={() => {
@@ -22,4 +22,4 @@ const ScheduleListItem = ({item, navigation, faveIds}) => {
   );
 };
 
-export default ScheduleListItem;
+export default SessionListItem;
