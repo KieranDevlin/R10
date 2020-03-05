@@ -1,7 +1,6 @@
 import AsyncStorage from '@react-native-community/async-storage';
 
 export const addFaveSession = async faveId => {
-  console.log(faveId);
   try {
     await AsyncStorage.setItem(
       `${faveId}`,
@@ -26,7 +25,6 @@ export const getAllFaves = async () => {
   try {
     const keys = await AsyncStorage.getAllKeys();
     const results = await AsyncStorage.multiGet(keys);
-    console.log(results);
     return results.filter(store => store[1].includes('faved_on'));
   } catch (e) {
     throw e;
