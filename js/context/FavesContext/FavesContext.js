@@ -16,36 +16,24 @@ class FavesProvider extends Component {
     };
   }
   getFavedSessionIds = async () => {
-    try {
-      const faves = await getAllFaves();
-      // we only want the ID key, not the whole object
-      const ids = faves.map(f => f[0]);
-      // update state to use in provider
-      this.setState({faveIds: ids});
-    } catch (e) {
-      throw e;
-    }
+    const faves = await getAllFaves();
+    // we only want the ID key, not the whole object
+    const ids = faves.map(f => f[0]);
+    // update state to use in provider
+    this.setState({faveIds: ids});
   };
 
-  addFaves = async sessionId => {
-    try {
-      const newFav = await addFaveSession(sessionId);
-      if (newFav) {
-        this.setState({faveIds: {faveIds: [...this.state.faveIds, newFav.id]}});
-      }
-      this.getFavedSessionIds();
-    } catch (e) {
-      throw e;
+  addFaveSession = async sessionId => {
+    const newFav = await addFaveSession(sessionId);
+    if (newFav) {
+      this.setState({faveIds: {faveIds: [...this.state.faveIds, newFav.id]}});
     }
+    this.getFavedSessionIds();
   };
 
-  removeFaves = async sessionId => {
-    try {
-      await removeFaveSession(sessionId);
-      this.getFavedSessionIds();
-    } catch (e) {
-      throw e;
-    }
+  removeFaveSession = async sessionId => {
+    await removeFaveSession(sessionId);
+    this.getFavedSessionIds();
   };
 
   componentDidMount = () => {
@@ -57,8 +45,8 @@ class FavesProvider extends Component {
       <FavesContext.Provider
         value={{
           ...this.state,
-          addFaveSession: this.addFaves,
-          removeFaveSession: this.removeFaves,
+          addFaveSession: this.addFaveSession,
+          removeFaveSession: this.removeFaveSession,
         }}>
         {this.props.children}
       </FavesContext.Provider>

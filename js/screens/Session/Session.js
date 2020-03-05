@@ -3,8 +3,13 @@ import {Text, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
-
-const Session = ({item, navigation}) => {
+const Session = ({
+  item,
+  navigation,
+  addFaveSession,
+  removeFaveSession,
+  faveIds,
+}) => {
   return (
     <View style={styles.root}>
       <View style={styles.session}>
@@ -34,7 +39,10 @@ const Session = ({item, navigation}) => {
       </View>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity
+          onPress={() => {
+            addFaveSession(item.id);
+          }}>
           <View style={styles.button}>
             <LinearGradient
               colors={['#9963ea', '#8797D6']}

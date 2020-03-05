@@ -1,7 +1,13 @@
 import React from 'react';
+import {ActivityIndicator, View} from 'react-native';
+import styles from './styles';
 
 const Loader = () => {
-  return <h1>this will be a Loader</h1>;
+  return (
+    <View style={styles.container}>
+      <ActivityIndicator />
+    </View>
+  );
 };
 
 export default Loader;

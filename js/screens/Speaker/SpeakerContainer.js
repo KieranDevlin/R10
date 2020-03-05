@@ -1,30 +1,35 @@
 import React, {Component} from 'react';
+import {Query} from 'react-apollo';
 import Speaker from './Speaker';
 import {SafeAreaView, ActivityIndicator, View, Text} from 'react-native';
-import {useQuery} from '@apollo/react-hooks';
 import {SINGLE_SPEAKER} from '../../config/queries';
 import styles from './styles';
+import Loader from '../../components/Loader';
 
-const SpeakerContainer = ({route, navigation}) => {
-  const {loading, error, data} = useQuery(SINGLE_SPEAKER, {
-    variables: {id: route.params.id},
-  });
-
-  if (loading)
-    return (
-      <View style={styles.fullScreen}>
-        <ActivityIndicator />
-      </View>
-    );
-  if (error)
-    return (
-      <View style={styles.fullScreen}>
-        <Text>Error </Text>
-      </View>
-    );
-  if (data) {
-    return <Speaker speaker={data.Speaker} navigation={navigation} />;
+class SpeakerContainer extends Component {
+  constructor(props) {
+    super(props);
   }
-};
+  render() {
+    return (
+      <Query
+        query={SINGLE_SPEAKER}
+        variables={{id: this.props.route.params.id}}>
+        {({data, loading}) => {
+          if (loading) return <Loader />;
+
+          if (data) {
+            return (
+              <Speaker
+                speaker={data.Speaker}
+                navigation={this.props.navigation}
+              />
+            );
+          }
+        }}
+      </Query>
+    );
+  }
+}
 
 export default SpeakerContainer;

@@ -5,6 +5,7 @@ import moment from 'moment';
 import ScheduleListItem from '../ScheduleListItem';
 
 const ScheduleList = ({allSessions, navigation}) => {
+  console.log(allSessions);
   return (
     <View>
       <SectionList

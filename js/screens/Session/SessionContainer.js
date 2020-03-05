@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import Session from './Session';
-import {SafeAreaView, ActivityIndicator} from 'react-native';
+import {FavesContext} from '../../context/FavesContext';
+
 class SessionContainer extends Component {
   render() {
     return (
-      <Session
-        item={this.props.route.params.item}
-        navigation={this.props.navigation}
-      />
+      <FavesContext.Consumer>
+        {value => (
+          <Session
+            item={this.props.route.params.item}
+            navigation={this.props.navigation}
+            addFaveSession={value.addFaveSession}
+            removeFaveSession={value.removeFaveSession}
+            FaveIds={value.FaveIds}
+          />
+        )}
+      </FavesContext.Consumer>
     );
   }
 }
