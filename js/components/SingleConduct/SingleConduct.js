@@ -70,7 +70,7 @@ const SingleConduct = ({conduct}) => {
   );
 
   return (
-    <View key={conduct.id}>
+    <View>
       <TouchableOpacity
         onPress={() => {
           animate();

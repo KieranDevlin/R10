@@ -21,7 +21,7 @@ const About = ({data}) => {
         <Text style={styles.title}>Code of Conduct</Text>
 
         {data.allConducts.map(conduct => (
-          <SingleConduct conduct={conduct} />
+          <SingleConduct conduct={conduct} key={conduct.id} />
         ))}
       </View>
 
