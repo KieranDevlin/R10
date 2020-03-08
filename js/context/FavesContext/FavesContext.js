@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-// import {exp} from 'react-native-reanimated';
 import {
   getAllFaves,
   addFaveSession,

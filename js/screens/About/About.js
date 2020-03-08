@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Animated,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  LayoutAnimation,
-  ScrollView,
-} from 'react-native';
+import {Text, View, Image, ScrollView} from 'react-native';
 import styles from './styles';
 import SingleConduct from '../../components/SingleConduct';
 const About = ({data}) => {

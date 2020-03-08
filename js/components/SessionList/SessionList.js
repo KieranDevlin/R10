@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionList, View, Text, TouchableHighlight} from 'react-native';
+import {SectionList, View, Text} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import SessionListItem from '../SessionListItem';

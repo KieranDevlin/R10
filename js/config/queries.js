@@ -49,23 +49,6 @@ export const CODE_OF_CONDUCT = gql`
   }
 `;
 
-// export const SINGLE_SESSION = gql`
-//   query Session($id: ID!) {
-//     Session(id: $id) {
-//       id
-//       description
-//       location
-//       speaker {
-//         id
-//         image
-//         name
-//       }
-//       startTime
-//       title
-//     }
-//   }
-// `;
-
 export const SINGLE_SPEAKER = gql`
   query Speaker($id: ID!) {
     Speaker(id: $id) {

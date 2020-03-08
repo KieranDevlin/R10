@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {Query} from 'react-apollo';
 import Speaker from './Speaker';
-import {SafeAreaView, ActivityIndicator, View, Text} from 'react-native';
 import {SINGLE_SPEAKER} from '../../config/queries';
-import styles from './styles';
 import Loader from '../../components/Loader';
 
 class SpeakerContainer extends Component {
