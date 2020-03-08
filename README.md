@@ -1,6 +1,6 @@
 # R10 👨‍🏫
 
-R10 is a hybrid, native application for both IOS and Android. It is a speaker session scheduling app where the user can favourite different sessions, and find the sessions with the Google Maps API. It uses [React-Natives](https://reactnative.dev/) built in components and the [React Navigation](https://reactnavigation.org/) library for stack navigation throughout the app.
+R10 is a hybrid, native application for both IOS and Android. It is a speaker session scheduling app where the user can favourite different sessions, and find the sessions with the Google Maps API. It uses [React-Natives](https://reactnative.dev/) built in components and the [React Navigation](https://reactnavigation.org/) library for stack navigation throughout the app. I also utilized [Apollo Client](https://www.apollographql.com/docs/react/) to obtain data from RED Academy's GraphQL endpoints. Icons throughout the app were obtained a combination of [React Native Vector Icons](https://github.com/oblador/react-native-vector-icons) library and from the [Material UI Community Icons](https://materialdesignicons.com/) library.
 
 ## Installation Instructions
 
