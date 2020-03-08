@@ -5,7 +5,7 @@ import styles from './styles';
 const Loader = () => {
   return (
     <View style={styles.container}>
-      <ActivityIndicator />
+      <ActivityIndicator size="large" />
     </View>
   );
 };

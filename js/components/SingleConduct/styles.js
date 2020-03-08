@@ -5,6 +5,11 @@ const styles = StyleSheet.create({
     color: '#9963ea',
     fontSize: 20,
   },
+  minus: {
+    color: '#9963ea',
+    fontSize: 20,
+    position: 'absolute',
+  },
   conduct: {
     fontFamily: 'Montserrat',
     color: '#9963ea',
