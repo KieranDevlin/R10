@@ -27,21 +27,24 @@ const Session = ({
         </Text>
         <Text style={styles.desc}>{item.description}</Text>
         <View style={styles.container}>
-          <Text style={styles.location}>Presented by:</Text>
+          {item.speaker && (
+            <>
+              <Text style={styles.location}>Presented by:</Text>
+              <View style={styles.speakerContainer}>
+                <Image
+                  style={styles.avatar}
+                  source={{uri: `${item.speaker.image}`}}
+                />
 
-          <View style={styles.speakerContainer}>
-            <Image
-              style={styles.avatar}
-              source={{uri: `${item.speaker.image}`}}
-            />
-
-            <TouchableOpacity
-              onPress={() => {
-                navigation.navigate('Speaker', {id: item.speaker.id});
-              }}>
-              <Text style={styles.speakerName}>{item.speaker.name}</Text>
-            </TouchableOpacity>
-          </View>
+                <TouchableOpacity
+                  onPress={() => {
+                    navigation.navigate('Speaker', {id: item.speaker.id});
+                  }}>
+                  <Text style={styles.speakerName}>{item.speaker.name}</Text>
+                </TouchableOpacity>
+              </View>
+            </>
+          )}
         </View>
       </View>
 
