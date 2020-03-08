@@ -1,18 +1,18 @@
 import React from 'react';
 import {
+  Animated,
   Text,
-  StyleSheet,
   View,
-  Dimensions,
   Image,
-  SectionList,
+  TouchableOpacity,
+  LayoutAnimation,
+  ScrollView,
 } from 'react-native';
 import styles from './styles';
-
+import SingleConduct from '../../components/SingleConduct';
 const About = ({data}) => {
-  console.log(data);
   return (
-    <View style={styles.root}>
+    <ScrollView style={styles.root}>
       <View style={styles.header}>
         <Image source={require('../../assets/images/r10_logo.png')} />
       </View>
@@ -27,12 +27,14 @@ const About = ({data}) => {
           Vancovuer, BC.
         </Text>
         <Text style={styles.title}>Code of Conduct</Text>
-        {data?.allConducts.map(singleCode => {
-          // TODO :return single code of conduct component here
-        })}
+
+        {data.allConducts.map(conduct => (
+          <SingleConduct conduct={conduct} />
+        ))}
       </View>
+
       <Text style={styles.text}>&copy; RED Academy 2017</Text>
-    </View>
+    </ScrollView>
   );
 };
 
