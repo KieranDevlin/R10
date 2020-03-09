@@ -3,7 +3,7 @@ import {SectionList, View, Text} from 'react-native';
 import styles from './styles';
 import moment from 'moment';
 import SessionListItem from '../SessionListItem';
-
+import PropTypes from 'prop-types';
 const SessionList = ({allSessions, navigation, faveIds}) => {
   return (
     <View>
@@ -26,6 +26,12 @@ const SessionList = ({allSessions, navigation, faveIds}) => {
         )}></SectionList>
     </View>
   );
+};
+
+SessionListItem.propTypes = {
+  allSessions: PropTypes.array,
+  navigation: PropTypes.object,
+  faveIds: PropTypes.array,
 };
 
 export default SessionList;

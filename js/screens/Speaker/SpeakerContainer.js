@@ -5,9 +5,6 @@ import {SINGLE_SPEAKER} from '../../config/queries';
 import Loader from '../../components/Loader';
 
 class SpeakerContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <Query

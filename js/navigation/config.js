@@ -3,7 +3,7 @@ import {StyleSheet, View, Platform} from 'react-native';
 import {Header} from '@react-navigation/stack';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import PropTypes from 'prop-types';
 const GradientHeader = props => (
   <View style={{backgroundColor: 'white', overflow: 'hidden'}}>
     <LinearGradient
@@ -16,14 +16,14 @@ const GradientHeader = props => (
   </View>
 );
 
-const MenuButton = props => {
+const MenuButton = ({navigation}) => {
   return (
     <Icon
       name="menu"
       color="white"
       size={25}
       style={{marginLeft: 20}}
-      onPress={() => props.navigation.toggleDrawer()}
+      onPress={() => navigation.toggleDrawer()}
     />
   );
 };
@@ -44,3 +44,15 @@ export const sharedScreenOptions = props => ({
     },
   }),
 });
+
+GradientHeader.propTypes = {
+  props: PropTypes.object,
+};
+
+MenuButton.propTypes = {
+  navigation: PropTypes.object,
+};
+
+sharedScreenOptions.propTypes = {
+  props: PropTypes.object,
+};

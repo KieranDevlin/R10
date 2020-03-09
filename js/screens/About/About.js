@@ -2,6 +2,7 @@ import React from 'react';
 import {Text, View, Image, ScrollView} from 'react-native';
 import styles from './styles';
 import SingleConduct from '../../components/SingleConduct';
+import PropTypes from 'prop-types';
 const About = ({data}) => {
   return (
     <ScrollView style={styles.root}>
@@ -28,6 +29,10 @@ const About = ({data}) => {
       <Text style={styles.text}>&copy; RED Academy 2017</Text>
     </ScrollView>
   );
+};
+
+About.propTypes = {
+  data: PropTypes.object,
 };
 
 export default About;

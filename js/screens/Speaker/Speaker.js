@@ -11,7 +11,7 @@ import {
 import styles from './styles';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import PropTypes from 'prop-types';
 const Speaker = ({speaker, navigation}) => {
   return (
     <View style={styles.root}>
@@ -57,5 +57,8 @@ const Speaker = ({speaker, navigation}) => {
     </View>
   );
 };
-
+Speaker.propTypes = {
+  speaker: PropTypes.object,
+  navigation: PropTypes.object,
+};
 export default Speaker;

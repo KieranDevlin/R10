@@ -15,7 +15,7 @@ const MapStack = createStackNavigator();
 const FavesStack = createStackNavigator();
 const AboutStack = createStackNavigator();
 
-const ScheduleStackScreens = props => (
+const ScheduleStackScreens = () => (
   <ScheduleStack.Navigator screenOptions={sharedScreenOptions}>
     <ScheduleStack.Screen name="Schedule" component={ScheduleContainer} />
     <ScheduleStack.Screen
@@ -27,12 +27,12 @@ const ScheduleStackScreens = props => (
     />
   </ScheduleStack.Navigator>
 );
-const MapStackScreens = props => (
+const MapStackScreens = () => (
   <MapStack.Navigator screenOptions={sharedScreenOptions}>
     <MapStack.Screen name="Map" component={MapContainer} />
   </MapStack.Navigator>
 );
-const FavesStackScreens = props => (
+const FavesStackScreens = () => (
   <FavesStack.Navigator screenOptions={sharedScreenOptions}>
     <FavesStack.Screen name="Faves" component={FavesContainer} />
     <FavesStack.Screen
@@ -44,7 +44,7 @@ const FavesStackScreens = props => (
     />
   </FavesStack.Navigator>
 );
-const AboutStackScreens = props => (
+const AboutStackScreens = () => (
   <AboutStack.Navigator screenOptions={sharedScreenOptions}>
     <AboutStack.Screen name="About" component={AboutContainer} />
   </AboutStack.Navigator>
@@ -53,7 +53,7 @@ const AboutStackScreens = props => (
 const BottomTabNav = createBottomTabNavigator();
 
 // add icons for each route
-const BottomTabNavScrens = props => (
+const BottomTabNavScrens = () => (
   <BottomTabNav.Navigator
     screenOptions={({route}) => ({
       tabBarIcon: ({focused, color, size}) => {

@@ -10,7 +10,7 @@ import {
   Easing,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import PropType from 'prop-types';
 if (Platform.OS === 'android') {
   if (UIManager.setLayoutAnimationEnabledExperimental) {
     UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -95,6 +95,10 @@ const SingleConduct = ({conduct}) => {
       </Animated.View>
     </View>
   );
+};
+
+SingleConduct.propType = {
+  conduct: PropType.object,
 };
 
 export default SingleConduct;

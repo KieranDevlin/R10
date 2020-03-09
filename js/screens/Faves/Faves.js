@@ -1,5 +1,6 @@
 import React from 'react';
 import SessionList from '../../components/SessionList';
+import PropTypes from 'prop-types';
 const Faves = ({navigation, faveIds, allSessions}) => {
   return (
     allSessions.length !== 0 && (
@@ -12,4 +13,9 @@ const Faves = ({navigation, faveIds, allSessions}) => {
   );
 };
 
+Faves.propTypes = {
+  navigation: PropTypes.object,
+  faveIds: PropTypes.array,
+  allSessions: PropTypes.array,
+};
 export default Faves;

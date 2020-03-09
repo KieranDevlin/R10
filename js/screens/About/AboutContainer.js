@@ -4,10 +4,6 @@ import {Query} from 'react-apollo';
 import {CODE_OF_CONDUCT} from '../../config/queries';
 import Loader from '../../components/Loader';
 class AboutContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <Query query={CODE_OF_CONDUCT}>

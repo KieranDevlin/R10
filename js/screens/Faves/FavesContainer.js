@@ -8,10 +8,6 @@ import {FavesContext} from '../../context/FavesContext';
 import Loader from '../../components/Loader';
 import styles from './styles';
 class FavesContainer extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <FavesContext.Consumer>

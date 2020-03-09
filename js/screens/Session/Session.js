@@ -4,7 +4,7 @@ import styles from './styles';
 import moment from 'moment';
 import LinearGradient from 'react-native-linear-gradient';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-
+import PropTypes from 'prop-types';
 const Session = ({
   item,
   navigation,
@@ -97,6 +97,14 @@ const Session = ({
       </View>
     </View>
   );
+};
+
+Session.propTypes = {
+  item: PropTypes.object,
+  navigation: PropTypes.object,
+  addFaveSession: PropTypes.func,
+  removeFaveSession: PropTypes.func,
+  faveIds: PropTypes.array,
 };
 
 export default Session;

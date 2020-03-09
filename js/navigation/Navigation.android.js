@@ -15,18 +15,18 @@ const FaveStack = createStackNavigator();
 const AboutStack = createStackNavigator();
 const Drawer = createDrawerNavigator();
 
-const ScheduleStackScreens = props => (
+const ScheduleStackScreens = () => (
   <ScheduleStack.Navigator screenOptions={sharedScreenOptions}>
     <ScheduleStack.Screen name="Schedule" component={ScheduleContainer} />
     <ScheduleStack.Screen name="Session" component={SessionContainer} />
   </ScheduleStack.Navigator>
 );
-const MapStackScreens = props => (
+const MapStackScreens = () => (
   <MapStack.Navigator screenOptions={sharedScreenOptions}>
     <MapStack.Screen name="Maps" component={MapContainer} />
   </MapStack.Navigator>
 );
-const FaveStackScreens = props => (
+const FaveStackScreens = () => (
   <FaveStack.Navigator
     initialRouteName="Faves"
     screenOptions={sharedScreenOptions}>
@@ -34,12 +34,12 @@ const FaveStackScreens = props => (
     <FaveStack.Screen name="Session" component={SessionContainer} />
   </FaveStack.Navigator>
 );
-const AboutStackScreens = props => (
+const AboutStackScreens = () => (
   <AboutStack.Navigator screenOptions={sharedScreenOptions}>
     <AboutStack.Screen name="About" component={AboutContainer} />
   </AboutStack.Navigator>
 );
-const DrawerNav = props => (
+const DrawerNav = () => (
   <Drawer.Navigator
     screenOptions={({route}) => ({
       drawerIcon: ({focused, color, size}) => {
