@@ -18,6 +18,8 @@ yarn install
 
 ```
 react-native run-ios
+cd ios
+pod install
 ```
 
 ### Run Android
