@@ -33,7 +33,8 @@ target 'R10' do
   pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-
+  
+  pod 'react-native-google-maps', path: '../node_modules/react-native-maps'  # If you need GoogleMaps support on iOS
   target 'R10Tests' do
     inherit! :search_paths
     # Pods for testing
