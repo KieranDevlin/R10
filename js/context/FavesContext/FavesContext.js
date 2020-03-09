@@ -15,24 +15,36 @@ class FavesProvider extends Component {
     };
   }
   getFavedSessionIds = async () => {
-    const faves = await getAllFaves();
-    // we only want the ID key, not the whole object
-    const ids = faves.map(f => f[0]);
-    // update state to use in provider
-    this.setState({faveIds: ids});
+    try {
+      const faves = await getAllFaves();
+      // we only want the ID key, not the whole object
+      const ids = faves.map(f => f[0]);
+      // update state to use in provider
+      this.setState({faveIds: ids});
+    } catch (e) {
+      throw new Error('There was an error finding your favourites');
+    }
   };
 
   addFaveSession = async sessionId => {
-    const newFav = await addFaveSession(sessionId);
-    if (newFav) {
-      this.setState({faveIds: {faveIds: [...this.state.faveIds, newFav.id]}});
+    try {
+      const newFav = await addFaveSession(sessionId);
+      if (newFav) {
+        this.setState({faveIds: {faveIds: [...this.state.faveIds, newFav.id]}});
+      }
+      this.getFavedSessionIds();
+    } catch (e) {
+      throw new Error('There was an error adding your new favourite');
     }
-    this.getFavedSessionIds();
   };
 
   removeFaveSession = async sessionId => {
-    await removeFaveSession(sessionId);
-    this.getFavedSessionIds();
+    try {
+      await removeFaveSession(sessionId);
+      this.getFavedSessionIds();
+    } catch (e) {
+      throw new Error('There was an error removing your favourite');
+    }
   };
 
   componentDidMount = () => {
