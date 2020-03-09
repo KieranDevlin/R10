@@ -48,16 +48,8 @@ react-native run-android
 
 ## Personal Learnings
 
-I learned the advantages of using Node.js, and open-source and cross-platform JavaScript runtime environment, to build a full-stack app. Being able to use JavaScript on both the front and back-end has plenty of advantages, most importantly for me, using one language for multiple purposes. It also uses Googles V8 JavaScript engine to compile code, making implementing code faster and easier than ever. Node.js also has a huge, supportive, and active community that is alwasy working towards improving Node.js itself
+Building my first native was actually easier than I thought it would be. React Native is very simple to implement, and very quick as well. The hybrid capabilities of React Native made building OS specific apps extremely quick, all that was required was configuring the Platform component.
 
-The benefits of using GraphQL to access data via an API vs REST are clear, and its popularity is rising. With an eloquent schema, queries can easily and quickly avoid over/under fetching data, making client queries very efficient.
+React Navigation also has quick and easy implementation. History stacks have never been so easy to build!
 
-Express.js is an excellent framework for building a web application quickly and efficiently.
-
-PostgreSQL can easily be created, altered, or otherwise manipulated with both Terminal using the command `psql` or using a GUI like [Postico](https://eggerapps.at/postico/) or [pgAdmin](https://www.pgadmin.org/download/).
-
-React quickly became the go-to JavaScript library for building apps, and for good reason. The state management, component based ecapsulation, and quick integration with most technology stacks makes it a very approachable and appealing library. Although state-management and hooks are very new to me personally, the idea of controlling components based on data being pass through components, or via context, is exciting.
-
-Material UI has great components and the quick implementation made building this app a breeze. The documentation is well written and comprehensive.
-
-This app had quite a learning curve, especially the client authentication. Hashing and encryption are exciting topics, but very complex. I am excited to see what apps I will get the opportunity to make next!
+Overall, this app was a great introduction into native apps and I look forward to building more!

@@ -6,8 +6,6 @@ export const addFaveSession = async faveId => {
       `${faveId}`,
       JSON.stringify({id: faveId, faved_on: new Date()}),
     );
-    const result = await AsyncStorage.getItem('Faves');
-    return result;
   } catch (e) {
     throw e;
   }

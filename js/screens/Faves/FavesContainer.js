@@ -12,9 +12,7 @@ class FavesContainer extends Component {
     return (
       <FavesContext.Consumer>
         {value => (
-          <Query
-            query={ALL_FAVE_SESSIONS}
-            variables={{filter: {id_not_in: value.faveIds}}}>
+          <Query query={ALL_FAVE_SESSIONS}>
             {({loading, data}) => {
               if (loading) return <Loader />;
 
