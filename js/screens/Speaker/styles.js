@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
   aboutContainer: {
     marginTop: 30,
     position: 'relative',
-    height: 150,
+    height: 100,
     width: Dimensions.get('window').width - 20,
     alignItems: 'center',
     justifyContent: 'center',
