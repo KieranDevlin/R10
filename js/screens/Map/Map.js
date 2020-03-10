@@ -12,11 +12,7 @@ const Map = () => {
   };
   return (
     <View style={styles.root}>
-      <MapView
-        provider={PROVIDER_GOOGLE}
-        style={styles.map}
-        region={latlng}
-        showsUserLocation={true}>
+      <MapView provider={PROVIDER_GOOGLE} style={styles.map} region={latlng}>
         <Marker coordinate={latlng} title={'R10'} description={'R10'} />
       </MapView>
     </View>
