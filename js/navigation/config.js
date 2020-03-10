@@ -16,8 +16,16 @@ const GradientHeader = props => (
   </View>
 );
 
-const MenuButton = ({navigation}) => {
-  return (
+const MenuButton = ({navigation, route}) => {
+  return route.name === 'Session' ? (
+    <Icon
+      name="chevron-left"
+      color="white"
+      size={25}
+      style={{marginLeft: 20}}
+      onPress={() => navigation.goBack()}
+    />
+  ) : (
     <Icon
       name="menu"
       color="white"
@@ -40,7 +48,9 @@ export const sharedScreenOptions = props => ({
   },
   ...Platform.select({
     android: {
-      headerLeft: () => <MenuButton navigation={props.navigation} />,
+      headerLeft: () => (
+        <MenuButton navigation={props.navigation} route={props.route} />
+      ),
     },
   }),
 });
