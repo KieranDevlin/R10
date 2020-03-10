@@ -3,8 +3,6 @@ import {StyleSheet, Dimensions} from 'react-native';
 const styles = StyleSheet.create({
   root: {
     backgroundColor: '#000000',
-    // height: Dimensions.get('window').height,
-    // width: Dimensions.get('window').width,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -12,7 +10,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
     position: 'relative',
     height: 150,
-    // padding: 30,
     width: Dimensions.get('window').width - 20,
     alignItems: 'center',
     justifyContent: 'center',
