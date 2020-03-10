@@ -83,7 +83,7 @@ const SingleConduct = ({conduct}) => {
           style={{
             transform: [{rotate: spin}],
             opacity: opacity,
-            position: 'relative',
+            ...styles.spinner,
           }}>
           <Icon name="plus" style={styles.icon} />
         </Animated.View>
