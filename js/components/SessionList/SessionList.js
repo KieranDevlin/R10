@@ -23,7 +23,8 @@ const SessionList = ({allSessions, navigation, faveIds}) => {
               {moment(title).format('h:mm A')}
             </Text>
           </View>
-        )}></SectionList>
+        )}
+      />
     </View>
   );
 };

@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 const SessionListItem = ({item, navigation, faveIds}) => {
   return (
     <TouchableHighlight
+      underlayColor={'pink'}
       onPress={() => {
         navigation.navigate('Session', {item, navigation});
       }}>
@@ -14,7 +15,7 @@ const SessionListItem = ({item, navigation, faveIds}) => {
         <View style={styles.liked}>
           <Text style={styles.sessionLocation}>{item.location}</Text>
           {faveIds?.includes(item.id) && (
-            <Icon name="heart" size={20} color="red" />
+            <Icon name="heart" size={16} color="red" />
           )}
         </View>
       </View>

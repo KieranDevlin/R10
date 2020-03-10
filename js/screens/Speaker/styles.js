@@ -3,14 +3,16 @@ import {StyleSheet, Dimensions} from 'react-native';
 const styles = StyleSheet.create({
   root: {
     backgroundColor: '#000000',
-    height: Dimensions.get('window').height,
-    width: Dimensions.get('window').width,
+    // height: Dimensions.get('window').height,
+    // width: Dimensions.get('window').width,
     alignItems: 'center',
     justifyContent: 'center',
   },
   aboutContainer: {
+    marginTop: 30,
     position: 'relative',
-    height: Dimensions.get('window').height * 0.15,
+    height: 150,
+    // padding: 30,
     width: Dimensions.get('window').width - 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -21,9 +23,11 @@ const styles = StyleSheet.create({
     left: 0,
   },
   about: {
+    position: 'absolute',
     color: '#ffffff',
     fontFamily: 'Montserrat',
     fontSize: 16,
+    top: 5,
   },
   speakerContainer: {
     backgroundColor: '#ffffff',
@@ -40,12 +44,14 @@ const styles = StyleSheet.create({
   },
   name: {
     fontFamily: 'Montserrat',
-    fontSize: 32,
-    marginVertical: 10,
+    fontSize: 28,
+    marginVertical: 14,
   },
   bio: {
     fontFamily: 'Montserrat-light',
+    fontSize: 15,
     marginVertical: 10,
+    lineHeight: 24,
   },
   button: {
     marginVertical: 10,
